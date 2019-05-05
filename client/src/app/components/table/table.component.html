@@ -1,0 +1,40 @@
+<div class="mat-elevation-z8">
+  
+  <button mat-raised-button color="primary" (click)="openDialog()">Nuevo Curso</button>
+  
+  <mat-table [dataSource]="dataSource" matSort matSortActive="title" matSortDirection="asc">
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Titulo</mat-header-cell>
+      <mat-cell *matCellDef="let course">{{ course.title }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="teacher">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Profesor</mat-header-cell>
+      <mat-cell *matCellDef="let course">{{ course.teacher.name }} {{ course.teacher.surname }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="level">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Nivel</mat-header-cell>
+      <mat-cell *matCellDef="let course">{{ course.level.value }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="hours">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Horas</mat-header-cell>
+      <mat-cell *matCellDef="let course">{{ course.hours }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="fileName">
+      <mat-header-cell *matHeaderCellDef>Fichero</mat-header-cell>
+      <mat-cell *matCellDef="let course"><a href="{{ url }}{{ course.id }}">{{ course.fileName }}</a></mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+
+  <mat-paginator #paginator
+                [pageSize]="5"
+                (page)="pageEvent = loadPage($event)">
+  </mat-paginator>
+
+</div>

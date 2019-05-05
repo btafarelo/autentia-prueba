@@ -1,0 +1,45 @@
+<h1>Añadir Curso</h1>
+
+<form class="example-container">
+	<div>
+		<mat-checkbox name="active" [(ngModel)]="active">activo</mat-checkbox>
+	</div>
+	
+	<div>
+		<mat-form-field>
+			<input matInput placeholder="titulo" required [(ngModel)]="title" name="title">
+		</mat-form-field>
+	</div>
+
+	<div>
+		<mat-form-field>
+			<mat-select name="level" [(ngModel)]="level" placeholder="nivel" required>
+				<mat-option *ngFor="let l of levels" [value]="l.id">{{ l.value }}</mat-option>
+			</mat-select>
+		</mat-form-field>
+	</div>
+
+	<div>
+		<mat-form-field>
+			<mat-select name="teacher" [(ngModel)]="teacher" placeholder="profesor" required>
+				<mat-option *ngFor="let t of teachers" [value]="t.id">{{ t.name }} {{ t.surname }}</mat-option>
+			</mat-select>
+		</mat-form-field>
+	</div>
+
+	<div>
+		<mat-form-field>
+			<input matInput type="number" min="0" placeholder="horas" required [(ngModel)]="hours" name="hours">
+		</mat-form-field>
+	</div>
+
+	<div>
+		<input type="file" (change)="fileChange($event)" placeholder="attachment" required [(ngModel)]="attachment" name="attachment">
+	</div>
+
+	<br />
+
+	<div>
+		<button mat-raised-button color="primary" (click)="save()">Añadir</button>
+	</div>
+</form>
