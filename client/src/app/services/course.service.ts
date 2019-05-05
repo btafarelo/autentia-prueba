@@ -11,7 +11,7 @@ import { throwError } from 'rxjs'
 })
 export class CourseService {
 
-  private url = environment.url + '/cursos';
+  url = environment.url + '/cursos';
 
   constructor(private http: HttpClient) { }
 

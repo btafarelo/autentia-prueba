@@ -11,7 +11,8 @@ export interface DialogData {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Catálogo de Cursos';
+  title = 'Autentia Prueba';
+  h1 = 'Catálogo de Cursos';
 
   constructor() {}
   

@@ -33,7 +33,7 @@ import { TeacherService } from './services/teacher.service';
     TableComponent
   ],
   entryComponents: [
-	DialogComponent
+	  DialogComponent
   ],
   imports: [
     BrowserModule,

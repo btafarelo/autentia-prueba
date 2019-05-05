@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class LevelService {
 
-  private url = environment.url + '/niveles';
+  url = environment.url + '/niveles';
 
   constructor(private http: HttpClient) { }
 

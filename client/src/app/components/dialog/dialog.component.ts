@@ -77,6 +77,10 @@ export class DialogComponent implements OnInit {
               this.openSnackBar("curso ha sido añadido!", "despedir"); 
               this.dialogRef.close();
             });
+        else {
+          this.openSnackBar("curso ha sido añadido!", "despedir"); 
+          this.dialogRef.close();
+        }
       },
       error => {
         this.openSnackBar("curso no ha sido añadido!", "despedir");
